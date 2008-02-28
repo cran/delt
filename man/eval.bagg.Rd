@@ -39,7 +39,7 @@ method = "loglik")
  An evaluation tree
 }
 %\references{ ~put references to the literature/web site here ~ }
-\author{ Jussi Klemelä }
+\author{ Jussi Klemela }
 %\note{ ~~further notes~~ }
 \seealso{ 
 \code{\link{lstseq.bagg}},

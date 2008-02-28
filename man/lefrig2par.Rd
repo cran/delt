@@ -31,7 +31,7 @@ Returns a level set tree:
   \item{volume }{determines the horizontal positioning of the nodes}
 }
 %\references{ ~put references to the literature/web site here ~ }
-\author{Jussi Klemelä }
+\author{Jussi Klemela }
 %\note{ ~~further notes~~ }
 
 

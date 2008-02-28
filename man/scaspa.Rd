@@ -30,7 +30,7 @@ List with the following vectors whose length is (eind-bind+1)
   \item{leafnums }{number of leaves for each subtree}
 }
 %\references{ ~put references to the literature/web site here ~ }
-\author{ Jussi Klemelä }
+\author{ Jussi Klemela }
 %\note{ ~~further notes~~ }
 
 % ~Make other sections like WARNING with \section{WARNING }{....} ~

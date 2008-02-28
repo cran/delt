@@ -56,7 +56,7 @@ A list with components
   of the aggregated histograms}
 }
 %\references{ ~put references to the literature/web site here ~ }
-\author{ Jussi Klemelä }
+\author{ Jussi Klemela }
 %\note{ ~~further notes~~ }
 \seealso{ 
 \code{\link{eval.bagg}}

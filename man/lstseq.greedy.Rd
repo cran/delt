@@ -31,7 +31,7 @@ lstseq.greedy(dendat, maxleaf, lstree = NULL, level = NULL)
   the smoothing parameter is the cardinality of the partition}
 }
 %\references{ ~put references to the literature/web site here ~ }
-\author{ Jussi Klemelä }
+\author{ Jussi Klemela }
 %\note{ ~~further notes~~ }
 \seealso{ 
 \code{\link{eval.greedy}}, 

@@ -1,14 +1,14 @@
-findleafs<-function(left,right){
-#Finds location of leafs in binary tree, living in vector
-#
-#left, right are itemnum-vectors
-#
-#returns itemnum-vector, 1 in the location of nodes 0 non-terminal
-#  NA in positions not belonging to tree
-#
-#vector where binary tree is living may be larger than cardinality
-#  of nodes of the tree
-#
+findleafs<-function(left,right)
+{
+# Finds location of leafs in binary tree, living in vector
+# left, right are itemnum-vectors
+
+# returns itemnum-vector, 1 in the location of nodes 0 non-terminal
+# NA in positions not belonging to tree
+
+# vector where binary tree is living may be larger than cardinality
+# of nodes of the tree
+
 itemnum<-length(left)
 leafloc<-matrix(NA,itemnum,1)
 pino<-matrix(0,itemnum,1)
