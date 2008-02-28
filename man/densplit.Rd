@@ -49,7 +49,7 @@ Returns an evaluation tree as a list of vectors.
   \item{support}{the support of the histogram}
 }
 %\references{ ~put references to the literature/web site here ~ }
-\author{Jussi Klemelä }
+\author{Jussi Klemela }
 %\note{ ~~further notes~~ }
 
 

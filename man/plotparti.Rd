@@ -29,7 +29,7 @@ pch = 21, support = pa$support, col = "black")
 A plot at the graphics window
 }
 %\references{ ~put references to the literature/web site here ~ }
-\author{ Jussi Klemelä }
+\author{ Jussi Klemela }
 %\note{ ~~further notes~~ }
 \seealso{ 
 \code{\link{partition}} 

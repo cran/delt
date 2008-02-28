@@ -33,7 +33,7 @@ minobs = NULL, seedi = 1, method = "projec", bound = 0)
 An evaluation tree
 }
 %\references{ ~put references to the literature/web site here ~ }
-\author{ Jussi Klemelä }
+\author{ Jussi Klemela }
 %\note{ ~~further notes~~ }
 \seealso{ 
 \code{\link{eval.greedy}},

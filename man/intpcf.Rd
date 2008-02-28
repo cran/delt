@@ -16,7 +16,7 @@ intpcf(pcf)
 Real number; the integral of the piecewise cosntant function
 }
 %\references{ ~put references to the literature/web site here ~ }
-\author{ Jussi Klemelä}
+\author{ Jussi Klemela}
 %\note{ ~~further notes~~ }
 %\seealso{ ~~objects to See Also as \code{\link{help}}, ~~~ }
 \examples{

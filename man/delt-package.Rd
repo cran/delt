@@ -91,9 +91,9 @@ supp                    Returns the bounding box of observations
 
 }
 \author{
-Jussi Klemelä <klemela@rumms.uni-mannheim.de>
+Jussi Klemela <klemela@oulu.fi>
 
-Maintainer: Jussi Klemelä <klemela@rumms.uni-mannheim.de>
+Maintainer: Jussi Klemela <klemela@oulu.fi>
 }
 %\references{}
 \keyword{ smooth }

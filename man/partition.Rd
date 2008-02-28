@@ -36,7 +36,7 @@ partition(et, grid=TRUE, zerorecs=FALSE)
   \item{support}{the rectangle which is partitioned}
 }
 %\references{ ~put references to the literature/web site here ~ }
-\author{ Jussi Klemelä }
+\author{ Jussi Klemela }
 %\note{ ~~further notes~~ }
 
 %~Make other sections like WARNING with \section{WARNING }{....} ~

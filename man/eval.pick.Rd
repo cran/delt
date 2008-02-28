@@ -24,7 +24,7 @@ eval.pick(treeseq, leaf)
 Returns an evaluation tree, see the documentation of function "eval.cart"
 }
 %\references{ ~put references to the literature/web site here ~ }
-\author{ Jussi Klemelä }
+\author{ Jussi Klemela }
 %\note{ ~~further notes~~ }
 
 % ~Make other sections like WARNING with \section{WARNING }{....} ~

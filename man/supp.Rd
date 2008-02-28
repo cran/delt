@@ -22,7 +22,7 @@ supp(dendat, epsi=0, blown=FALSE)
 interval and (2*i)-element is the end of the i:th interval
 }
 %\references{ http://www.rni.helsinki.fi/~jsk/delt }
-\author{Jussi Klemelä}
+\author{Jussi Klemela}
 %\note{ ~~further notes~~ }
 
 %\seealso{ ~~objects to SEE ALSO as \code{\link{~~fun~~}}, ~~~ }

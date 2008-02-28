@@ -33,9 +33,9 @@ sampstart=FALSE, boost=FALSE, N=60)
   the mixture components}
   \item{curmix }{a probability vector; the weights of the mixture components}
 }
-\references{ Jussi Klemelä (2005). 
+\references{ Jussi Klemela (2005). 
 Density Estimation with Stagewise Optimization of the Empirical Risk }
-\author{ Jussi Klemelä }
+\author{ Jussi Klemela }
 
 \seealso{ 
 \code{\link{eval.stage}}

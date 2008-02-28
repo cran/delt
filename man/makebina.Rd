@@ -28,7 +28,7 @@ makebina(et)
 Returns an object of class tree. 
 }
 %\references{ ~put references to the literature/web site here ~ }
-\author{Jussi Klemelä }
+\author{Jussi Klemela }
 %\note{ ~~further notes~~ }
 
 \seealso{  

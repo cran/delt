@@ -37,7 +37,7 @@ prune(et)
 
 }
 %\references{ ~put references to the literature/website}
-\author{ Jussi Klemelä}
+\author{ Jussi Klemela}
 %\note{ ~~further notes~~ }
 
 \seealso{ 
