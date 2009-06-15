@@ -1,11 +1,12 @@
-allocolo<-function(mlkm,pg,mlkmpre,pgpre,colopre,coloind,colofall,paletti){
-#
+allocolo<-function(mlkm,pg,mlkmpre,pgpre,colopre,coloind,colofall,paletti)
+{
+
 lkmpre<-mlkmpre$lkm   #previous number of modes
 lkm<-mlkm$lkm         #current number of modes
 modecolo<-matrix("",lkm,1)
-#
+
 # calculate distances
-#
+
 if (!is.null(colopre)){
 dist<-matrix(NA,lkm,lkmpre)   #NA is infty
 for (i in 1:lkm){
@@ -16,9 +17,9 @@ for (i in 1:lkm){
    }
 }
 }
-#
+
 # allocate colors
-#
+
 if (is.null(colopre)){
 for (k in 1:lkm){
   modecolo[k]<-paletti[k]
@@ -53,7 +54,7 @@ for (k in 1:lkm){
 }
 colofall<-lkm
 }
-#
+
 return(list(modecolo=modecolo,coloind=coloind,colofall=colofall))
 }
 

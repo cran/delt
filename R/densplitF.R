@@ -1,6 +1,5 @@
 densplitF<-function(x,leaf,minlkm,suppo,
-method="loglik",blokki=50,
-splitscan=0,seedf=1)
+method="loglik",blokki=50,splitscan=0,seedf=1)
 {
 d<-length(x[1,])  #muuttujien lkm
 n<-length(x[,1])  #havaintojen lkm
@@ -66,7 +65,7 @@ while (pinin>=1){
   vec[curin]<-NA                #aluksi ei puolitettu mitaan muuttujaa
   nelem[curin]<-count(curbeg,curend)                   #havaintojen lkm
   volume[curin]<-massone(currec)
-  mean[curin]<-denmean(volume[curin],nelem[curin],n,suppvol)#estim arv osiossa
+  mean[curin]<-denmean(volume[curin],nelem[curin],n)#,suppvol)#estim arv osiossa
   ssr[curin]<-denssr(volume[curin],nelem[curin],n,method)   #log likeli
   for (dimi in 1:d){
     low[curin,dimi]<-currec[2*dimi-1]
@@ -98,8 +97,8 @@ while (pinin>=1){
       jako<-findsplit(x,currec,curbeg,curend,obspoint,suppo,n,method)  
     }
     else{
-       jako<-findsplitRa(x,currec,curbeg,curend,obspoint,suppo,n,method,
-             splitscan,seedf)  
+       jako<-findsplit(x,currec,curbeg,curend,obspoint,suppo,n,method)
+             #splitscan,seedf)  
     }
 
     left[curin]<-curin+1
@@ -148,7 +147,7 @@ while (pinin>=1){
     vec[curin]<-NA
     nelem[curin]<-count(curbeg,curend)
     volume[curin]<-massone(currec)
-    mean[curin]<-denmean(volume[curin],nelem[curin],n,suppvol)
+    mean[curin]<-denmean(volume[curin],nelem[curin],n)#,suppvol)
     ssr[curin]<-denssr(volume[curin],nelem[curin],n,method)
     for (dimi in 1:d){
       low[curin,dimi]<-leftrec[2*dimi-1]

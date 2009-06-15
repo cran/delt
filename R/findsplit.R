@@ -1,19 +1,20 @@
-findsplit<-function(x,rec,beg,end,obspoint,suppo,n,method){
+findsplit<-function(x,rec,beg,end,obspoint,suppo,n,method)
+{
 #Finds a splitting point.
-#
+
 #x is n*d data-matrix
 #rec is 2*d-vector
 #beg, end in 1:n, beg<end, pointers to pointers
 #obspoint is n-vector, points to rows of x
-#
+
 #Returns
 #list(val,vec,leftrec,rightrec,leftbeg,leftend,rightbeg,rightend,obspoint)
-#
+
 #mahd. puolituspisteet ovat a+(b-a)*j/(n+1), j=1,...,n
 #rec koostuu valeista muotoa [a0,b0]
 #a0=a+(b-a)*j0/(n+1), b0=a+(b-a)*j1/(n+1), 1<= j0 < j1 <= n
 #siis mahd jakopisteiden lkm on [(n+1)*(b0-a0)/(b-a)]-1 = j1-j0-1 >= 0 
-#
+
 d<-length(x[1,])        #x-muuttujien lkm
 n<-length(x[,1])
 obs<-obspoint[beg:end]

@@ -1,11 +1,12 @@
-densplitR<-function(x,minlkm,suppo,method="loglik",blokki=50){
+densplitR<-function(x,minlkm,suppo,method="loglik",blokki=50)
+{
 #Makes a density tree.
-#
+
 #x is n*d data-matrix
 #minlkm integer >=1
 #  Kun solmun elem lkm on minlkm tai pienempi, sita ei enaa jaeta
 #suppo on 2*xlkm-vektori, ilmoitaa kullekin muuttujalle kantajan
-#
+
 #tulos on lista(val,vec,mean,nelem,ssr,volum)
 #val,vec,mean,nelem,ssr ovat vektoreita joiden pituus on puun silmujen lkm,
 #vektorit sis. tiedot puun silmuista.
@@ -16,21 +17,21 @@ densplitR<-function(x,minlkm,suppo,method="loglik",blokki=50){
 # ssr on silmun hav lkm kertaa logaritmi estimaatin arvosta silmussa
 # left
 # right
-#
+
 #minlkm ohella voitaisiin kaytaa kynnysarvoa minssr;
 #silmuja jaetaan siihen asti etta kaikkien lehtien ssr on yli minssr, mutta 
 #seuraava jako johtaisi ssr:aan joka on pienempi tai yhtasuuri kuin minssr.
 #Xploressa: opt=list(minsize,mincut,mindev)
-#
+
 d<-length(x[1,])  #muuttujien lkm
 n<-length(x[,1])  #havaintojen lkm
-#
+
 suppvol<-massone(suppo)
 minvolume<-suppvol/(n+1)^d
-#
+
 maxnoden<-2*n   #suurin arviotu mahd silmujen lkm, n(1+1/2+1/4+...+1/n) 
 maxpinen<-2*n
-#
+
 val<-matrix(1,maxnoden)       #huom haluttaisiin vektoreita
 vec<-matrix(1,maxnoden)
 mean<-matrix(1,maxnoden)
@@ -39,12 +40,12 @@ nelem<-matrix(1,maxnoden)
 volume<-matrix(1,maxnoden)
 left<-matrix(0,maxnoden)
 right<-matrix(0,maxnoden)
-#
+
 obspoint<-seq(1:n)               #pointers to the data (rows of x)
 pinoparen<-matrix(0,maxpinen,1)
 pinorecs<-matrix(0,maxpinen,d*2) #osioiden maaritelmat
 pinopoint<-matrix(0,maxpinen,2)  #pointers to the pointers: location where the
-#                          #pointers to the datapoints are, for each rectangle
+                         #pointers to the datapoints are, for each rectangle
 pinin<-1
 pinoparen[pinin]<-0
 pinorecs[pinin,]<-suppo
@@ -65,7 +66,7 @@ while (pinin>=1){
      right<-blokitus(right,blokki)
      maxnoden<-maxnoden+blokki
   }
-  #
+  
   curparent<-pinoparen[pinin]
   currec<-pinorecs[pinin,]    
   curpoint<-pinopoint[pinin,]
@@ -78,7 +79,7 @@ while (pinin>=1){
   vec[curin]<-NA                #aluksi ei puolitettu mitaan muuttujaa
   nelem[curin]<-count(curbeg,curend)                   #havaintojen lkm
   volume[curin]<-massone(currec)
-  mean[curin]<-denmean(volume[curin],nelem[curin],n,suppvol)#estim arv osiossa
+  mean[curin]<-denmean(volume[curin],nelem[curin],n)#,suppvol)#estim arv osiossa
   ssr[curin]<-denssr(volume[curin],nelem[curin],n,method)   #log likeli
   #  jatketaan vas. alipuuhun
   while ((nelem[curin]>minlkm) && (volume[curin]>=minvolume)){
@@ -86,9 +87,9 @@ while (pinin>=1){
     # lisaa varmempi testi ks densplitF ??????
  
     #  koska solmu jaettava, tehdaan jako
-    #
+    
     jako<-findsplit(x,currec,curbeg,curend,obspoint,suppo,n,method)  
-    #
+    
     left[curin]<-curin+1
     val[curin]<-jako$val
     vec[curin]<-jako$vec
@@ -131,7 +132,7 @@ while (pinin>=1){
     vec[curin]<-NA
     nelem[curin]<-count(curbeg,curend)
     volume[curin]<-massone(currec)
-    mean[curin]<-denmean(volume[curin],nelem[curin],n,suppvol)
+    mean[curin]<-denmean(volume[curin],nelem[curin],n)#,suppvol)
     ssr[curin]<-denssr(volume[curin],nelem[curin],n,method)
   }
 }

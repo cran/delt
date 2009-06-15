@@ -1,5 +1,5 @@
 plotparti<-function(pa,d1=NULL,d2=NULL,
-dendat=NULL,restri=NULL,pch=21,support=pa$support,col="black")
+dendat=NULL,restri=NULL,pch=21,support=pa$support,col="black",cex.axis=1)
 {
 # support=NULL
 
@@ -11,8 +11,9 @@ xmax<-max(recs[,2])
 ymin<-min(recs[,3])
 ymax<-max(recs[,4])
 
-if (!is.null(dendat)) plot(dendat,xlab="",ylab="",pch=pch)
-else plot(0,0,type="n",ylim=c(ymin,ymax),xlab="",ylab="",xlim=c(xmin,xmax))
+if (!is.null(dendat)) plot(dendat,xlab="",ylab="",pch=pch,cex.axis=cex.axis)
+else plot(0,0,type="n",ylim=c(ymin,ymax),xlab="",ylab="",xlim=c(xmin,xmax),
+     cex.axis=cex.axis)
 
 len<-dim(recs)[1]
 

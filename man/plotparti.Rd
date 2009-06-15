@@ -6,7 +6,7 @@ Draws the partition calculated with function "partition".
 }
 \usage{
 plotparti(pa, d1 = NULL, d2 = NULL, dendat = NULL, restri = NULL, 
-pch = 21, support = pa$support, col = "black")
+pch = 21, support = pa$support, col = "black", cex.axis = 1)
 }
 \arguments{
   \item{pa}{ partition; output of function "partition" }
@@ -23,6 +23,7 @@ pch = 21, support = pa$support, col = "black")
    see function "points" }
   \item{support}{ the bounds of the partition }
   \item{col}{ color of the lines of the partition }
+  \item{cex.axis}{magnification factor for the axis annotation; see "par"}
 }
 %\details{}
 \value{
