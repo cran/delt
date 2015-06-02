@@ -37,7 +37,8 @@ lstseq.greedy(dendat, maxleaf, lstree = NULL, level = NULL)
 \code{\link{eval.greedy}}, 
 }
 \examples{
-dendat<-sim.data(n=200,seed=1,type="mulmodII")
+library(denpro)
+dendat<-sim.data(n=100,seed=1,type="mulmodII")
 estiseq<-lstseq.greedy(dendat,maxleaf=20,lstree=TRUE)
 
 mt<-modegraph(estiseq)

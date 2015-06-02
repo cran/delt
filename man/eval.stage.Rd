@@ -40,7 +40,8 @@ An evaluation tree
 \code{\link{eval.stage.gauss}} 
 }
 \examples{
-dendat<-sim.data(n=200,seed=5,type="mulmodII")
+library(denpro)
+dendat<-sim.data(n=100,seed=5,type="mulmodII")
 leaf<-13  # the number of leafs of the greedy histograms
 M<-5      # the number of greedy histograms
 

@@ -59,6 +59,8 @@ Returns an evaluation tree as a list of vectors.
 }
 
 \examples{
+library(denpro)
+
 dendat<-sim.data(n=200,seed=5,type="mulmodII")
 et<-densplit(dendat)
 

@@ -3,24 +3,24 @@
 \alias{delt}
 \docType{package}
 \title{
-Estimation of multivariate densities with adaptive histograms
+Estimation of Multivariate Densities Using Adaptive Partitions
 }
 \description{
-The package implements methods for estimating multivariate
-densities: adaptive histograms (greedy histograms and
-CART-histograms), stagewise minimization, and bootstrap
-aggregation are provided.
+We implement methods for estimating multivariate densities.
+We include a discretized kernel estimator,
+an adaptive histogram (a greedy histogram and a CART-histogram), 
+stagewise minimization, and bootstrap aggregation.
 }
 \details{
 \tabular{ll}{
 Package: \tab delt\cr
-Version: \tab 0.8.0\cr
-Date: \tab 2009-06-17\cr
+Version: \tab 0.8.2\cr
+Date: \tab 2015-05-17\cr
 Depends: \tab R\cr
 License: \tab GPL version 2 or newer\cr
-URL: \tab http://www.rni.helsinki.fi/~jsk/delt\cr
-Packaged: \tab Mon Jun 15 16:34:17 2009; jsk\cr
-Built: \tab R 2.6.2; i486-pc-linux-gnu; 2009-06-15 16:34:35; unix\cr
+URL: \tab http://www.jussiklemela.com/delt\cr
+Packaged: \tab Mon Jun 15 16:34:17 2015; jsk\cr
+Built: \tab R 3.2.0; i486-pc-linux-gnu; 2015-05-15 16:34:35; unix\cr
 }
 
 Greedy histograms:
@@ -91,14 +91,15 @@ supp                    Returns the bounding box of observations
 
 }
 \author{
-Jussi Klemela <klemela@oulu.fi>
+Jussi Klemela <jussi.klemela@gmail.com>
 
-Maintainer: Jussi Klemela <klemela@oulu.fi>
+Maintainer: Jussi Klemela <jussi.klemela@gmail.com>
 }
 %\references{}
 \keyword{ smooth }
 %\seealso{~~ \code{\link[<pkg>:<pkg>-package]{<pkg>}} ~~ }
 \examples{
+library(denpro)
 
 # Generate the data
 

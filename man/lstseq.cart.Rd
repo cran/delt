@@ -42,7 +42,8 @@ A list with components
 \code{\link{prune}} 
 }
 \examples{
-dendat<-sim.data(n=200,seed=1,type="mulmodII")
+library(denpro)
+dendat<-sim.data(n=100,seed=1,type="mulmodII")
 et<-densplit(dendat)
 treeseq<-prune(et)
 

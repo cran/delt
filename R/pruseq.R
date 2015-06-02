@@ -90,11 +90,11 @@ else{
    remnodenum<-remnodenum+1
    delnodes[remnodenum]<-t   
    j<-j+1
-   #Tehdään t:sta lehti
+   #Tehdaan t:sta lehti
    N[t]<-1
    S[t]<-R[t]
    G[t]<-NA                    #infty
-   #Palataan juureen päivittäen N, S, g ja G.
+   #Palataan juureen paivittaen N, S, g ja G.
    while (t>1){
       t<-p[t]
       S[t]<-S[tree$left[t]]+S[tree$right[t]]

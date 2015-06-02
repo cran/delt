@@ -20,3 +20,5 @@ treeseq<-pruseqlev(bt)
 
 return(treeseq)
 }
+
+

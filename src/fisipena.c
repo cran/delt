@@ -194,62 +194,62 @@ double *apuu4)
     int ** mcdordobs;
 
     fsdendat = (double **)malloc((*maarain+1) * sizeof(double *));
-    if (NULL == fsdendat) exit(1);
+    if (NULL == fsdendat) return;
     for (i = 0; i <= *maarain; i++) {
        fsdendat[i] = (double *)malloc((*din+1) * sizeof(double));
-       if (NULL == fsdendat[i]) exit(1);
+       if (NULL == fsdendat[i]) return;
     }
 
     mcfsdendat = (double **)malloc((*mcmaarain+1) * sizeof(double *));
-    if (NULL == mcfsdendat) exit(1);
+    if (NULL == mcfsdendat) return;
     for (i = 0; i <= *mcmaarain; i++) {
        mcfsdendat[i] = (double *)malloc((*din+1) * sizeof(double));
-       if (NULL == mcfsdendat[i]) exit(1);
+       if (NULL == mcfsdendat[i]) return;
     }
 
     dordobs = (int **)malloc((*din+1) * sizeof(int *));
-    if (NULL == dordobs) exit(1);
+    if (NULL == dordobs) return;
     for (i = 0; i <= *din; i++) {
        dordobs[i] = (int *)malloc((*maarain+1) * sizeof(int));
-       if (NULL == dordobs[i]) exit(1);
+       if (NULL == dordobs[i]) return;
     }
 
     mcdordobs = (int **)malloc((*din+1) * sizeof(int *));
-    if (NULL == mcdordobs) exit(1);
+    if (NULL == mcdordobs) return;
     for (i = 0; i <= *din; i++) {
        mcdordobs[i] = (int *)malloc((*mcmaarain+1) * sizeof(int));
-       if (NULL == mcdordobs[i]) exit(1);
+       if (NULL == mcdordobs[i]) return;
     }
 
     
-    if ( xvec == NULL) exit(1); 
+    if ( xvec == NULL) return; 
     
-    if ( mcxvec == NULL) exit(1); 
+    if ( mcxvec == NULL) return; 
     
-    if ( ssrvec1 == NULL) exit(1); 
-    if ( ssrvec11 == NULL) exit(1); 
-    if ( ssrvec2 == NULL) exit(1); 
-    if ( ssrvec22 == NULL) exit(1); 
+    if ( ssrvec1 == NULL) return; 
+    if ( ssrvec11 == NULL) return; 
+    if ( ssrvec2 == NULL) return; 
+    if ( ssrvec22 == NULL) return; 
 
     
-    if ( eligible1 == NULL) exit(1);
-    if ( eligible2 == NULL) exit(1); 
+    if ( eligible1 == NULL) return;
+    if ( eligible2 == NULL) return; 
     
      
-    if ( dleftend == NULL) exit(1); 
-    if ( mcdleftend == NULL) exit(1); 
-    if ( gvalvec == NULL) exit(1); 
+    if ( dleftend == NULL) return; 
+    if ( mcdleftend == NULL) return; 
+    if ( gvalvec == NULL) return; 
     
     
-    if ( lefendsit == NULL) exit(1); 
-    if ( mcmclefends == NULL) exit(1); 
-    if ( gleftrec == NULL) exit(1); 
-    if ( grightrec == NULL) exit(1); 
+    if ( lefendsit == NULL) return; 
+    if ( mcmclefends == NULL) return; 
+    if ( gleftrec == NULL) return; 
+    if ( grightrec == NULL) return; 
     
     
-    if ( ordobsint == NULL) exit(1); 
+    if ( ordobsint == NULL) return; 
     
-    if ( mcordobsint == NULL) exit(1); 
+    if ( mcordobsint == NULL) return; 
     
 
     /* INITIALIZE */
@@ -566,7 +566,7 @@ leftend=leftend,rightbeg=rightbeg,rightend=rightend,obspoint=obspoint)
 double denssrCCC(double volu, int nelem, int n, int method, double mix)
 
 {
-    double vastaus;
+    double vastaus=0.0;
 
     if (nelem==0){
         vastaus=0;
@@ -574,7 +574,7 @@ double denssrCCC(double volu, int nelem, int n, int method, double mix)
     else if (method==1){   /* 1 = loglik */
         vastaus=nelem*log(nelem/(n*volu))/n;  /* log(N,base=exp) */
     }
-    else if (method==2){  /* 2 = projec */
+    else{ /* if (method==2){  /* 2 = projec */
         vastaus=mix*(2-mix)*pow(nelem,2)/(pow(n,2)*volu);
     }
 
@@ -602,11 +602,11 @@ int treesortbudCCC(double *vec, int numb, int *ordobsint)
     int *refe = (int *)malloc(sizeof(int) * (2*numb+1));
     int *pino = (int *)malloc(sizeof(int) * (2*numb+1));
 
-    if (value == NULL) exit(1); 
-    if (left == NULL) exit(1); 
-    if (right == NULL) exit(1); 
-    if (refe == NULL) exit(1); 
-    if (pino == NULL) exit(1); 
+    if (value == NULL) return 0; 
+    if (left == NULL) return 0; 
+    if (right == NULL) return 0; 
+    if (refe == NULL) return 0; 
+    if (pino == NULL) return 0; 
 
 
     /* initialize */

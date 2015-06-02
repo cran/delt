@@ -46,7 +46,8 @@ prune(et)
 }
 
 \examples{
-dendat<-sim.data(n=200,seed=5,type="mulmodII")
+library(denpro)
+dendat<-sim.data(n=100,seed=5,type="mulmodII")
 et<-densplit(dendat)
 
 treeseq<-prune(et)
@@ -58,7 +59,7 @@ leaf
 etsub<-eval.pick(treeseq,leaf=leaf)
 
 dp<-draw.pcf(etsub)
-persp(dp$x,dp$y,dp$z,phi=25,theta=-120)
+#persp(dp$x,dp$y,dp$z,phi=25,theta=-120)
 
 }
 

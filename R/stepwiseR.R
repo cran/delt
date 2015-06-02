@@ -4,7 +4,7 @@ method="projec",bound=0)
 n<-dim(dendat)[1]
 d<-dim(dendat)[2]
 
-tr<-myosplit(dendat,leafs,method,minobs)
+tr<-myosplitR(dendat,leafs,method,minobs)
 
 suppo<-supp(dendat,blown=TRUE)
 step<-matrix(0,d,1)

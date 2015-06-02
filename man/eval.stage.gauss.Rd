@@ -41,6 +41,7 @@ Density Estimation with Stagewise Optimization of the Empirical Risk }
 \code{\link{eval.stage}}
 }
 \examples{
+library(denpro)
 dendat<-sim.data(n=100,type="1d2modal",seed=1) 
 
 mugrid<-seq(-1,5,0.3)    # grid of mu-values

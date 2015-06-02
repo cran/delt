@@ -129,7 +129,7 @@ double *apuu4)
     
     int rightbeg, rightend, leftbeg, leftend; 
     int gjakopiste;
-    int minvali, apu, apula;
+    int minvali, apula, apu;
     int vec, gval; 
     int leftobslkm, rightobslkm;
     /* findobsCC */ 
@@ -142,33 +142,33 @@ double *apuu4)
     int ** dordobs;
 
     fsdendat = (double **)malloc((*maarain+1) * sizeof(double *));
-    if (NULL == fsdendat) exit(1);
+    if (NULL == fsdendat) return;
     for (i = 0; i <= *maarain; i++) {
        fsdendat[i] = (double *)malloc((*din+1) * sizeof(double));
-       if (NULL == fsdendat[i]) exit(1);
+       if (NULL == fsdendat[i]) return;
     }
 
     dordobs = (int **)malloc((*din+1) * sizeof(int *));
-    if (NULL == dordobs) exit(1);
+    if (NULL == dordobs) return;
     for (i = 0; i <= *din; i++) {
        dordobs[i] = (int *)malloc((*maarain+1) * sizeof(int));
-       if (NULL == dordobs[i]) exit(1);
+       if (NULL == dordobs[i]) return;
     }
 
-    if ( xvec == NULL) exit(1); 
-    if ( ssrvec1 == NULL) exit(1); 
-    if ( ssrvec11 == NULL) exit(1); 
-    if ( valvec == NULL) exit(1); 
-    if ( eligible1 == NULL) exit(1); 
-    if ( dleftend == NULL) exit(1); 
-    if ( gvalvec == NULL) exit(1); 
-    if ( eligible2 == NULL) exit(1); 
-    if ( lefends == NULL) exit(1); 
-    if ( gleftrec == NULL) exit(1); 
-    if ( grightrec == NULL) exit(1); 
-    if ( ordobsint == NULL) exit(1); 
-    if ( ssrvec2 == NULL) exit(1); 
-    if ( ssrvec22 == NULL) exit(1); 
+    if ( xvec == NULL) return; 
+    if ( ssrvec1 == NULL) return; 
+    if ( ssrvec11 == NULL) return; 
+    if ( valvec == NULL) return; 
+    if ( eligible1 == NULL) return; 
+    if ( dleftend == NULL) return; 
+    if ( gvalvec == NULL) return; 
+    if ( eligible2 == NULL) return; 
+    if ( lefends == NULL) return; 
+    if ( gleftrec == NULL) return; 
+    if ( grightrec == NULL) return; 
+    if ( ordobsint == NULL) return; 
+    if ( ssrvec2 == NULL) return; 
+    if ( ssrvec22 == NULL) return; 
 
     /* INITIALIZE */
 
@@ -391,7 +391,7 @@ leftend=leftend,rightbeg=rightbeg,rightend=rightend,obspoint=obspoint)
 double denssrCC(double volu, int nelem, int n, int method)
 
 {
-    double vastaus;
+    double vastaus=0.0;
 
     if (nelem==0){
         vastaus=0;
@@ -399,7 +399,7 @@ double denssrCC(double volu, int nelem, int n, int method)
     else if (method==1){   /* 1 = loglik */
         vastaus=nelem*log(nelem/(n*volu));  /* log(N,base=exp) */
     }
-    else if (method==2){  /* 2 = projec */
+    else{ /* if (method==2){  /* 2 = projec */  
         vastaus=pow(nelem,2)/(n*volu);
     }
 
@@ -426,11 +426,11 @@ int treesortbudCC(double *vec, int numb, int *ordobsint)
     int *refe = (int *)malloc(sizeof(int) * (2*numb+1));
     int *pino = (int *)malloc(sizeof(int) * (2*numb+1));
 
-    if (value == NULL) exit(1); 
-    if (left == NULL) exit(1); 
-    if (right == NULL) exit(1); 
-    if (refe == NULL) exit(1); 
-    if (pino == NULL) exit(1); 
+    if (value == NULL) return 0; 
+    if (left == NULL) return 0; 
+    if (right == NULL) return 0; 
+    if (refe == NULL) return 0; 
+    if (pino == NULL) return 0; 
 
     /* initialize */
     for (j=1; j<=(2*numb); j++){

@@ -38,7 +38,8 @@ suppo = NULL)
 }
 
 \examples{
-dendat<-sim.data(n=400,seed=5,type="mulmodII")
+library(denpro)
+dendat<-sim.data(n=200,seed=5,type="mulmodII")
 eva<-eval.greedy(dendat,leaf=15)
 
 dp<-draw.pcf(eva,pnum=c(60,60))         

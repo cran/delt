@@ -1,8 +1,9 @@
 profdelt<-function(treeseq,leafnum,suppo,frekv=NULL,cvol=FALSE,ccen=FALSE,cfre=FALSE){
 #Profiles an adaptive histogram
-#
-tree<-picktree(treeseq,leafnum)
-#
+
+tree<-NULL
+#tree<-picktree(treeseq,leafnum)
+
 # Tehdaan binaaripuusta paloittain vakio
 pv<-partition(tree,suppo)
 recs<-pv$recs
@@ -12,3 +13,5 @@ pg<-profgene(values,recs,frekv,cvol,ccen,cfre)
 #
 return(pg)
 }
+
+

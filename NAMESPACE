@@ -1,4 +1,5 @@
 export(
+cluster.lst,  
 eval.cart,
 eval.greedy,
 lstseq.greedy,
@@ -11,6 +12,7 @@ lstseq.bagg,
 eval.stage,
 eval.stage.gauss,
 partition,
+pcf.greedy.kernel,
 plotparti,
 lefrig2par,
 makebina,
@@ -20,5 +22,8 @@ scaspa
 )
 
 useDynLib(delt)
+
+import(denpro)
+
 
 

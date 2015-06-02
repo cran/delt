@@ -11,14 +11,14 @@ n<-length(dendat[,1])
 if (is.null(leafnum)){   #empirical smoothing param. selection
   ri<-riskesti(treeseq,n)
   indeksi<-omaind(ri)
-  indeksit<-detsikko(treeseq$leafs,indeksi) #Haet haluttu puu puit jonosta
-  alipuu<-poistamon(treeseq$tree,indeksit)
+#  indeksit<-detsikko(treeseq$leafs,indeksi) #Haet haluttu puu puit jonosta
+#  alipuu<-poistamon(treeseq$tree,indeksit)
 }
 else{
   indeksi<-detsi(treeseq$info[,1],leafnum)
-  indeksit<-detsikko(treeseq$leafs,indeksi)
+#  indeksit<-detsikko(treeseq$leafs,indeksi)
   #indeksit<-t(t(treeseq$leafs))[indeksi,] 
-  alipuu<-poistamon(treeseq$tree,indeksit)  #alipuu<-dpoimi(puuseq,indeksi)
+#  alipuu<-poistamon(treeseq$tree,indeksit)  #alipuu<-dpoimi(puuseq,indeksi)
 }
 #
 # Tehdaan binaaripuusta paloittain vakio
@@ -31,6 +31,7 @@ epsi<-0.01
 # Tehdaan paloittain vakiosta tiheyspuu
 #
 #return(list(binpuu=alipuu,palvak=palvak))
+alipuu<-NULL
 return(alipuu)
 }
 

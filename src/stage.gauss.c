@@ -72,10 +72,10 @@ void stageGauss(double *mu0,
  */
  double ** riskit;
     riskit = (double **)malloc((*dictCard+1) * sizeof(double *));
-    if (NULL == riskit) exit(1);
+    if (NULL == riskit) return;
     for (i = 0; i <= *dictCard; i++) {
        riskit[i] = (double *)malloc((*dictCardSig+1) * sizeof(double));
-       if (NULL == riskit[i]) exit(1);
+       if (NULL == riskit[i]) return;
     }
 
  /*apu = evanor(1,1); *lapu=apu;*/
@@ -86,11 +86,11 @@ void stageGauss(double *mu0,
      imin=1;
      curmin=fabs(mugrid[1]-*mu0);
      for (i=1; i<=*dictCard; i++){
-         apu=abs(mugrid[i]-*mu0);
+         apu=fabs(mugrid[i]-*mu0);
          if (apu<curmin) imin=i;
      }
      jmin=1;
-     curmin=abs(siggrid[1]-*sig0);
+     curmin=fabs(siggrid[1]-*sig0);
      for (j=1; j<=*dictCardSig; j++){
          apu=fabs(siggrid[j]-*sig0);
          if (apu<curmin) jmin=j;

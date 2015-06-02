@@ -36,6 +36,7 @@ An evaluation tree
 \code{\link{densplit}} 
 }
 \examples{
+library(denpro)
 dendat<-sim.data(n=600,seed=5,type="mulmodII")
 eva<-eval.cart(dendat,16)
 

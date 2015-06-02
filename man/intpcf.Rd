@@ -20,7 +20,8 @@ Real number; the integral of the piecewise cosntant function
 %\note{ ~~further notes~~ }
 %\seealso{ ~~objects to See Also as \code{\link{help}}, ~~~ }
 \examples{
-dendat<-sim.data(n=100,seed=5,type="mulmodII")
+library(denpro)
+dendat<-sim.data(n=50,seed=5,type="mulmodII")
 eva<-eval.greedy(dendat,leaf=5)
 intpcf(eva)
  

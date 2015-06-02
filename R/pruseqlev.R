@@ -85,12 +85,12 @@ else{
    #j<-j+1
    delnodes[delnodeend[k]]<-t   
 
-   # Tehdään t:sta lehti
+   # Tehdaan t:sta lehti
    N[t]<-1
    S[t]<-tree$ssr[t]
    G[t]<-NA                    #infty
    g[t]<-NA
-   # Palataan juureen päivittäen N, S, g ja G.
+   # Palataan juureen paivittaen N, S, g ja G.
    while (t>1){
       t<-p[t]
       ######################

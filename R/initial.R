@@ -8,7 +8,7 @@ initial<-function(ssr,left,right){
 #
 #densplit saattaa muodostaa puun, jossa jokin alipuu
 #on huonompi kuin ko. alipuun juuri. 
-#Muokataan puuta siten, että alipuut ovat vahintaan yhta hyvia.
+#Muokataan puuta siten, etta alipuut ovat vahintaan yhta hyvia.
 #Algoritmi sama kuin Donoho 95, ts. 
 #lahdetaan yhta tasoa lehtia ylempaa, edetaan taso kerrallan ylospain, 
 #kustakin jaosta tarkistetaan, onko se hyodyllinen.

@@ -40,9 +40,9 @@ apuu4 = double(1))
 #include <math.h>
 #include <stdlib.h> 
 
-#define maxnodnum 10000
+#define maxnodnum 100000
 #define pienin -2^1000000
-#define nmax 1000
+#define nmax 60000
 
 /* GLOBALS */
 int obspoint[nmax];   /* final ordering */
@@ -164,35 +164,35 @@ double *apuu4)
     int ** gpinorecs;
 
     dendat = (double **)malloc((*n+1) * sizeof(double *));
-    if (NULL == dendat) exit(1);
+    if (NULL == dendat) return;
     for (i = 0; i <= *n; i++) {
        dendat[i] = (double *)malloc((*d+1) * sizeof(double));
-       if (NULL == dendat[i]) exit(1);
+       if (NULL == dendat[i]) return;
     }
     ginternlow = (int **)malloc((maxnodnum+1) * sizeof(int *));
-    if (NULL == ginternlow) exit(1);
+    if (NULL == ginternlow) return;
     for (i = 0; i <= maxnodnum; i++) {
        ginternlow[i] = (int *)malloc((*d+1) * sizeof(int));
-       if (NULL == ginternlow[i]) exit(1);
+       if (NULL == ginternlow[i]) return;
     }
     ginternupp = (int **)malloc((maxnodnum+1) * sizeof(int *));
-    if (NULL == ginternupp) exit(1);
+    if (NULL == ginternupp) return;
     for (i = 0; i <= maxnodnum; i++) {
        ginternupp[i] = (int *)malloc((*d+1) * sizeof(int));
-       if (NULL == ginternupp[i]) exit(1);
+       if (NULL == ginternupp[i]) return;
     }
     gpinorecs = (int **)malloc((maxnodnum+1) * sizeof(int *));
-    if (NULL == gpinorecs) exit(1);    
+    if (NULL == gpinorecs) return;    
     for (i = 0; i <= maxnodnum; i++) {
        gpinorecs[i] = (int *)malloc((2*(*d)+1) * sizeof(int));
-       if (NULL == gpinorecs[i]) exit(1);
+       if (NULL == gpinorecs[i]) return;
     }
 
-    if ( obsoso == NULL) exit(1); 
-    if ( gcurrec == NULL) exit(1); 
-    if ( gleftrec == NULL) exit(1); 
-    if ( grightrec == NULL) exit(1); 
-    if ( xdendat == NULL) exit(1); 
+    if ( obsoso == NULL) return; 
+    if ( gcurrec == NULL) return; 
+    if ( gleftrec == NULL) return; 
+    if ( grightrec == NULL) return; 
+    if ( xdendat == NULL) return; 
 
 
     /* INITIALIZING */
@@ -292,7 +292,7 @@ while (pinin>=1){
 	supplen=suppo[2*j]-suppo[2*j-1];
 	   /* the length of the original interval */
         valipit=(gcurrec[2*j]-gcurrec[2*j-1])*step[j];
-        jpislkm=floor((*n+1)*(valipit/supplen))-1;
+        jpislkm= (int) floor((*n+1)*(valipit/supplen))-1;
         if (jpislkm>=1){
 	    jpistesti=1;  /* TRUE */
         }
@@ -522,30 +522,30 @@ int findsplitC(double *xdendat,
     int ** dordobs;
 
     fsdendat = (double **)malloc((maara+1) * sizeof(double *));
-    if (NULL == fsdendat) exit(1);
+    if (NULL == fsdendat) return 0;
     for (i = 0; i <= maara; i++) {
        fsdendat[i] = (double *)malloc((d+1) * sizeof(double));
-       if (NULL == fsdendat[i]) exit(1);
+       if (NULL == fsdendat[i]) return 0;
     }
     dordobs = (int **)malloc((d+1) * sizeof(int *));
-    if (NULL == dordobs) exit(1);
+    if (NULL == dordobs) return 0;
     for (i = 0; i <= d; i++) {
        dordobs[i] = (int *)malloc((maara+1) * sizeof(int));
-       if (NULL == dordobs[i]) exit(1);
+       if (NULL == dordobs[i]) return 0;
     }
 
-    if ( valvec == NULL) exit(1); 
-    if ( leftrec == NULL) exit(1); 
-    if ( rightrec == NULL) exit(1); 
-    if ( xvec == NULL) exit(1); 
-    if ( ssrvec1 == NULL) exit(1); 
-    if ( ssrvec2 == NULL) exit(1);    
-    if ( dleftend == NULL) exit(1); 
-    if ( gvalvec == NULL) exit(1); 
-    if ( lefends == NULL) exit(1); 
-    if ( ordobsint == NULL) exit(1); 
-    if ( gleftrec == NULL) exit(1); 
-    if ( grightrec == NULL) exit(1); 
+    if ( valvec == NULL) return 0; 
+    if ( leftrec == NULL) return 0; 
+    if ( rightrec == NULL) return 0; 
+    if ( xvec == NULL) return 0; 
+    if ( ssrvec1 == NULL) return 0; 
+    if ( ssrvec2 == NULL) return 0;    
+    if ( dleftend == NULL) return 0; 
+    if ( gvalvec == NULL) return 0; 
+    if ( lefends == NULL) return 0; 
+    if ( ordobsint == NULL) return 0; 
+    if ( gleftrec == NULL) return 0; 
+    if ( grightrec == NULL) return 0; 
    
 
 
@@ -569,7 +569,7 @@ int findsplitC(double *xdendat,
       valipit=(grec[2*i]-grec[2*i-1])*step[i];
       /*valipit=rec[2*i]-rec[2*i-1];*/ 
 
-      jpislkm=floor((n+1)*(valipit/supplen))-1;
+      jpislkm= (int) floor((n+1)*(valipit/supplen))-1;
 
       if (jpislkm>=1){   /* jos voidaan jakaa */
 
@@ -740,7 +740,7 @@ leftend=leftend,rightbeg=rightbeg,rightend=rightend,obspoint=obspoint)
 double denssrC(double volu, int nelem, int n, int method)
 
 {
-    double vastaus;
+    double vastaus=0.0;
 
     if (nelem==0){
         vastaus=0;
@@ -748,7 +748,7 @@ double denssrC(double volu, int nelem, int n, int method)
     else if (method==1){   /* 1 = loglik */
         vastaus=nelem*log(nelem/(n*volu));  /* log(N,base=exp) */
     }
-    else if (method==2){  /* 2 = projec */
+    else{ /* if (method==2){  /* 2 = projec */
         vastaus=pow(nelem,2)/(n*volu);
     }
 
@@ -775,11 +775,11 @@ int treesortbudC(double *vec, int numb, int *ordobsint)
     int *refe = (int *)malloc(sizeof(int) * (2*numb+1));
     int *pino = (int *)malloc(sizeof(int) * (2*numb+1));
 
-    if (value == NULL) exit(1); 
-    if (left == NULL) exit(1); 
-    if (right == NULL) exit(1); 
-    if (refe == NULL) exit(1); 
-    if (pino == NULL) exit(1); 
+    if (value == NULL) return 0; 
+    if (left == NULL) return 0; 
+    if (right == NULL) return 0; 
+    if (refe == NULL) return 0; 
+    if (pino == NULL) return 0; 
 
 
     /* initialize */

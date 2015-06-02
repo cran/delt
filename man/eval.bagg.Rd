@@ -47,13 +47,14 @@ method = "loglik")
 \code{\link{eval.greedy}}
 }
 \examples{
+library(denpro)
 dendat<-sim.data(n=600,seed=5,type="mulmodII")
 
 leaf<-7     # number of leaves in the histograms
 seed<-1     # seed for choosing bootstrap samples
 sample="worpl" # without-replacement bootstrap
 prune="on"  # we use CART-histograms
-B<-50       # the number of histograms in the average
+B<-5        # the number of histograms in the average
 
 eva<-eval.bagg(dendat,B,leaf,seed=seed,sample=sample,prune=prune)
 

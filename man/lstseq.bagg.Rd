@@ -62,7 +62,8 @@ A list with components
 \code{\link{eval.bagg}}
 }
 \examples{
-dendat<-sim.data(n=200,seed=1,type="mulmodII")
+library(denpro)
+dendat<-sim.data(n=100,seed=1,type="mulmodII")
 
 seed<-1        # seed for choosing bootstrap samples
 sample="worpl" # without-replacement bootstrap

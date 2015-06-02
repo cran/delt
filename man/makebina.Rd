@@ -37,7 +37,8 @@ Returns an object of class tree.
 }
 
 \examples{
-dendat<-sim.data(n=200,seed=5,type="mulmodII")
+library(denpro)
+dendat<-sim.data(n=100,seed=5,type="mulmodII")
 et<-densplit(dendat)
 mb<-makebina(et)
 
